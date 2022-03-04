@@ -1,0 +1,22 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+    <ng-container *ngFor="let entity of entities">
+        <div class="accordion-item">
+            <h3 class="accordion-header" [id]="entity.aria_labelledby">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="entity.data_bs_target" aria-expanded="true"
+                    [attr.aria-controls]="entity.aria_controls">
+                    {{entity.type}}
+                </button>
+            </h3>
+            <div [id]="entity.aria_controls" class="accordion-collapse collapse show"
+                [attr.aria-labelledby]="entity.aria_labelledby">
+                <section class="accordion-body" *ngFor="let eterables of entity.listOfProps">
+                    <mat-checkbox class="example-margin" [(ngModel)]="eterables.checked">
+                        {{eterables.name}}
+                    </mat-checkbox>
+                </section>
+            </div>
+        </div>
+    </ng-container>
+    <button mat-stroked-button class="filter-button" color="primary" (click)="getCheckboxes()">Primary</button>
+</div>

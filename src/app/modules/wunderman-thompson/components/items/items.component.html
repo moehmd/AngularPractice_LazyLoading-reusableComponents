@@ -1,0 +1,24 @@
+<p class="bold m-2">
+    Total number of {{dataName}}: {{totalTrades}}
+</p>
+<ng-container>
+    <div class="row">
+        <div class="col-4" *ngFor="let item of Items">
+            <mat-card class="no-shadow">
+                <img mat-card-image [src]="'http://localhost:5000/Images/' + [item.formatId] + '.png'"
+                    [alt]="item.formatId">
+                <mat-card-header>
+                    <mat-card-title>{{item.title}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button [href]="item.link">read more...</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</ng-container>

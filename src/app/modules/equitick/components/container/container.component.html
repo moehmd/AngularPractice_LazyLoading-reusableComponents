@@ -1,0 +1,15 @@
+<div class="trade-content">
+    <div class="search-dialog_section" fxLayout="row" fxLayoutAlign="space-around center">
+        <eq-search [searchForm]="searchForm" [SearchFields]="SearchFields" (searchObject)="handleSearch($event)">
+        </eq-search>
+        <button mat-flat-button (click)="openDialog()">
+            Add New Trade
+        </button>
+    </div>
+    <eq-trades [properties]="tradeProperties" [dataName]="dataType" [dataSource]="allTrades"
+        [totalTrades]="totalTrades">
+    </eq-trades>
+    <eq-pagination [pageSize]="pageSize" [totalTrades]="totalTrades" [pageSizeOptions]="pageSizeOptions"
+        (pagination)="handlePagination($event)">
+    </eq-pagination>
+</div>

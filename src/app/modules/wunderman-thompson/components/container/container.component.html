@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-3 filter-section">
+        <eq-search [searchForm]="searchForm" [SearchFields]="SearchFields" (searchObject)="handleSearch($event)">
+        </eq-search>
+        <wt-checklist [entities]="filterEntities" (checked)="handleCheckboxes($event)"></wt-checklist>
+    </div>
+    <div class="col-9 content-section">
+        <wt-items [dataName]="dataName" [totalTrades]="totalTrades" [Items]="Items"></wt-items>
+        <eq-pagination [pageSize]="pageSize" [totalTrades]="totalTrades" [pageSizeOptions]="pageSizeOptions"
+            (pagination)="handlePagination($event)">
+        </eq-pagination>
+    </div>
+</div>

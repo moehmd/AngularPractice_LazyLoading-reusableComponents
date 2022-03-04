@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -31,9 +32,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",  
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [              
+              "./node_modules/jquery/dist/jquery.js",              
+              "./node_modules/bootstrap/dist/js/bootstrap.js"            
+            ]
           },
           "configurations": {
             "production": {

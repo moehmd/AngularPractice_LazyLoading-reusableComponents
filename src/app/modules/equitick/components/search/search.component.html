@@ -1,0 +1,11 @@
+<div class="search-part">
+    <form [formGroup]="searchForm" fxLayoutAlign="center">
+        <ng-container *ngFor="let field of SearchFields">
+            <mat-form-field class="m-1 pb-0" appearance="outline">
+                <mat-label>{{field.name}}</mat-label>
+                <input [type]="field.type" matInput [formControlName]="field.name" [placeholder]="field.name">
+            </mat-form-field>
+        </ng-container>
+        <button mat-flat-button (click)="searchTrades()">Search</button>
+    </form>
+</div>
